@@ -3,13 +3,13 @@
   "name": "Escuela Laboral Divina Providencia",
   "icons": [
     {
-      "src": "photo-jpg.png",
-      "type": "image/png",
+      "src": "photo-jpg.p.jpg",
+      "type": "image/jpeg",
       "sizes": "192x192"
     },
     {
-      "src": "photo-jpg.png",
-      "type": "image/png",
+      "src": "photo-jpg.p.jpg",
+      "type": "image/jpeg",
       "sizes": "512x512"
     }
   ],
@@ -19,4 +19,5 @@
   "scope": "/",
   "theme_color": "#0b57d0",
   "description": "App de Inscripciones - La Victoria, SDN"
+
 }
