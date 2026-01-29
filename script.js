@@ -25,24 +25,35 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Manejo del envío
-    form.addEventListener('submit', function(e) {
-        // Obtenemos el curso seleccionado ANTES de que se limpie el formulario
-        const cursoSeleccionado = document.getElementById('curso').value;
-        const linkGrupo = enlacesGrupos[cursoSeleccionado];
+ form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita que la página se recargue
 
-        btn.disabled = true;
-        btn.textContent = "Enviando e ingresando al grupo...";
+    const cursoSeleccionado = document.getElementById('curso').value;
+    const linkGrupo = enlacesGrupos[cursoSeleccionado];
+    const formData = new FormData(form);
 
-        // Dejamos que Formspree haga su trabajo y luego redirigimos
-        setTimeout(() => {
-            if (linkGrupo) {
-                window.location.href = linkGrupo;
-            } else {
-                alert("¡Inscripción enviada! Pronto te contactaremos.");
-                btn.disabled = false;
-                btn.textContent = "Enviar Inscripción";
-            }
-        }, 2000); // Esperamos 2 segundos para asegurar el envío de datos
+    btn.disabled = true;
+    btn.textContent = "Enviando e ingresando al grupo...";
+
+    // Enviamos los datos a Google Sheets
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Importante para Google Scripts
+    })
+    .then(() => {
+        if (linkGrupo) {
+            window.location.href = linkGrupo;
+        } else {
+            alert("¡Inscripción enviada!");
+            btn.disabled = false;
+            btn.textContent = "Enviar Inscripción";
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("Hubo un error al enviar.");
+        btn.disabled = false;
     });
 });
 
@@ -51,4 +62,5 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js')
     .then(() => console.log("App lista para instalar"))
     .catch((err) => console.log("Error de App", err));
+
 }
