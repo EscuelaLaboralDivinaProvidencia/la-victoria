@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0b57d0">
+    <title>Inscripciones | Escuela Divina Providencia</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card">
+            <div id="header-container">
+                <h1 id="title">Escuela Laboral Divina Providencia</h1>
+                <div class="info-historia">
+                    <h3>Fundada en 1995 por la Hna. Sor Mercedes</h3>
+                </div>
+            </div>
+
+            <form id="inscripcionForm" action="https://script.google.com/macros/s/AKfycbzJBqf5flY54cebaolUJAo7uPn38YHbKBxOwFljOnwDDobTnXlEaO1CHGyYJApvYmKdgg/exec" method="POST">
+                <div class="campo">
+                    <label>Nombre del Estudiante</label>
+                    <input type="text" name="Nombre" placeholder="Nombre completo" required>
+                </div>
+                <div class="campo">
+                    <label>WhatsApp / Teléfono</label>
+                    <input type="tel" name="Telefono" placeholder="809-000-0000" required>
+                </div>
+                <div class="campo">
+                    <label>Cursos Disponibles</label>
+                    <select name="Curso" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="Informatica">Informática</option>
+                        <option value="Ensamblado">Ensamblado de PC</option>
+                        <option value="Sistemas">Sistemas Operativos</option>
+                        <option value="Redes">Redes e Infraestructura</option>
+                        <option value="Masaje">Masaje Terapéutico</option>
+                        <option value="Reposteria">Repostería Artesanal</option>
+                        <option value="Tapiceria">Tapicería Fina</option>
+                        <option value="Hacker Etico">Cyber Seguridad</option>
+                    </select>
+                </div>
+                <button type="submit" id="submitBtn">Enviar Inscripción</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="footer-address">
+            <p><i class="fas fa-location-dot"></i> Calle Padre Paex #15, La Victoria, Santo,Dom,Norte.RD</p>
+            <p>© 2026 Escuela Laboral Divina Providencia</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
