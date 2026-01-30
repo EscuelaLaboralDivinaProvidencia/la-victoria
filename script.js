@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Manejo de la imagen (usa el nombre real que subiste)
     const img = document.createElement('img');
-    img.src = 'photo-jpg.p.jpg'; 
+    img.src = 'photo-jpg.p.jng'; 
     img.className = 'foto-perfil';
     img.alt = 'Sor Mercedes';
     img.onerror = () => { img.src = 'photo-jpg.png.jpg'; }; 
@@ -58,4 +58,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 
