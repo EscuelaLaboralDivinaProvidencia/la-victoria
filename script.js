@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Manejo de la imagen (usa el nombre real que subiste)
     const img = document.createElement('img');
-    img.src = 'photo-jpg.p.jng'; 
+    img.src = 'photo-jpg.p.png'; 
     img.className = 'foto-perfil';
     img.alt = 'Sor Mercedes';
-    img.onerror = () => { img.src = 'photo-jpg.png.jpg'; }; 
+    img.onerror = () => { img.src = 'photo-jpg.p.png'; }; 
     header.insertBefore(img, title);
 
     // 2. Enlaces de WhatsApp (¡Asegúrate de poner los links reales!)
@@ -58,5 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 
 
