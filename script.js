@@ -4,21 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('inscripcionForm');
     const btn = document.getElementById('submitBtn');
 
-    // 1. Manejo de la imagen (usa el nombre real que subiste)
-   // Busca esta sección en tu script.js y cámbiala por esta:
+    // 1. Manejo de la imagen CORREGIDO para PC y Celular
+    const img = document.createElement('img');
+    img.src = 'photo-jpg.p.jpg'; // Extensión corregida a .jpg
+    img.className = 'foto-perfil';
+    img.alt = 'Sor Mercedes';
+    
+    // Si la imagen falla, intentamos cargarla de nuevo o mostramos error en consola
+    img.onerror = () => { 
+        console.error("Error cargando la foto de Sor Mercedes. Verifica el nombre del archivo.");
+    }; 
+    header.insertBefore(img, title);
 
-const img = document.createElement('img');
-img.src = 'photo-jpg.p.jpg'; // <-- Cambiado de .png a .jpg
-img.className = 'foto-perfil';
-img.alt = 'Sor Mercedes';
-
-// También corrige el manejador de errores
-img.onerror = () => { 
-    console.error("No se pudo cargar la imagen: photo-jpg.p.jpg");
-}; 
-
-header.insertBefore(img, title);
-    // 2. Enlaces de WhatsApp (¡Asegúrate de poner los links reales!)
+    // 2. Enlaces de WhatsApp (Actualiza los que faltan)
     const enlacesGrupos = {
         "Informatica": "https://chat.whatsapp.com/GvzP65tpi6f0wPszWDBWjC",
         "Ensamblado": "LINK_AQUI",
@@ -33,7 +31,6 @@ header.insertBefore(img, title);
     form.addEventListener('submit', function(e) {
         e.preventDefault(); 
 
-        // CORRECCIÓN: Buscamos por 'name' porque en tu HTML no pusiste 'id="curso"'
         const cursoSeleccionado = form.querySelector('select[name="Curso"]').value;
         const linkGrupo = enlacesGrupos[cursoSeleccionado];
 
@@ -49,22 +46,22 @@ header.insertBefore(img, title);
         .then(() => {
             btn.textContent = "¡Éxito! Entrando al grupo...";
             setTimeout(() => {
+                // Si existe el link y no es el texto por defecto, redirigir
                 if (linkGrupo && linkGrupo !== "LINK_AQUI") {
                     window.location.href = linkGrupo;
                 } else {
-                    alert("¡Inscripción recibida!");
+                    alert("¡Inscripción recibida! Pronto te contactaremos.");
                     btn.disabled = false;
                     btn.textContent = "Enviar Inscripción";
                 }
             }, 1500);
         })
         .catch(() => {
-            alert("Error de conexión");
+            alert("Error de conexión al enviar el formulario.");
             btn.disabled = false;
+            btn.textContent = "Enviar Inscripción";
         });
     });
 });
-
-
 
 
