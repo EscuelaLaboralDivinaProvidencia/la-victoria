@@ -45,6 +45,29 @@ footer {
     border-top: none;         /* Eliminamos la línea separadora */
     margin-top: -10px;        /* Subimos el footer para pegarlo a la tarjeta */
 }
+    margin: -110px auto 15px; /* Ajuste para que flote perfectamente sobre la tarjeta */
+    display: block;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 10;
+}
+
+/* 3. Footer Pegado al Formulario */
+.wrapper {
+    flex: 0;                  /* Evita que empuje el footer hacia abajo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 0;    /* Espacio arriba para la foto, nada abajo */
+}
+
+footer {
+    background: transparent;  /* Sin fondo para integrarse al diseño */
+    padding: 15px 25px 40px;  /* Espaciado ajustado */
+    text-align: center;
+    border-top: none;         /* Eliminamos la línea separadora */
+    margin-top: -10px;        /* Subimos el footer para pegarlo a la tarjeta */
+}
     flex: 1;
     display: flex;
     justify-content: center;
@@ -160,3 +183,4 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 
 }
+
