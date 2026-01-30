@@ -5,13 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('submitBtn');
 
     // 1. Manejo de la imagen (usa el nombre real que subiste)
-    const img = document.createElement('img');
-    img.src = 'photo-jpg.p.png'; 
-    img.className = 'foto-perfil';
-    img.alt = 'Sor Mercedes';
-    img.onerror = () => { img.src = 'photo-jpg.p.png'; }; 
-    header.insertBefore(img, title);
+   // Busca esta sección en tu script.js y cámbiala por esta:
 
+const img = document.createElement('img');
+img.src = 'photo-jpg.p.jpg'; // <-- Cambiado de .png a .jpg
+img.className = 'foto-perfil';
+img.alt = 'Sor Mercedes';
+
+// También corrige el manejador de errores
+img.onerror = () => { 
+    console.error("No se pudo cargar la imagen: photo-jpg.p.jpg");
+}; 
+
+header.insertBefore(img, title);
     // 2. Enlaces de WhatsApp (¡Asegúrate de poner los links reales!)
     const enlacesGrupos = {
         "Informatica": "https://chat.whatsapp.com/GvzP65tpi6f0wPszWDBWjC",
@@ -58,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 
 
 
