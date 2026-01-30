@@ -1,186 +1,32 @@
-/* 1. Ajuste de la Tarjeta con Sombreado Suave */
-.card {
-    background: var(--white);
-    width: 100%;
-    max-width: 450px;
-    padding: 40px 25px 20px; /* Reducimos el padding inferior */
-    border-radius: 30px;
-    /* Sombreado más profundo y suave para que resalte */
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2); 
-    text-align: center;
-    animation: fadeIn 0.8s ease-out;
-    position: relative;
-    z-index: 5;
-}
-
-/* 2. Foto de la Fundadora: Más Grande y Completa */
+/* 1. Ajuste de la Foto: Más grande y completa */
 .foto-perfil {
-    width: 160px;             /* Tamaño aumentado */
-    height: 160px;
+    width: 150px;             /* Aumentamos el tamaño de 120px a 150px */
+    height: 150px;            /* Mantenemos proporción cuadrada */
     border-radius: 50%;
-    border: 5px solid var(--white);
+    border: 4px solid var(--white);
     outline: 3px solid var(--primary);
-    object-fit: contain;      /* Muestra la imagen completa sin recortes */
-    background-color: #ffffff; 
-    margin: -110px auto 15px; /* Ajuste para que flote perfectamente sobre la tarjeta */
+    object-fit: contain;      /* CAMBIO: 'contain' muestra la foto completa sin recortar bordes */
+    background-color: #f0f0f0; /* Fondo suave por si la foto es pequeña */
+    margin: -100px auto 10px; /* Ajustamos el margen para el nuevo tamaño */
     display: block;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     position: relative;
     z-index: 10;
 }
 
-/* 3. Footer Pegado al Formulario */
+/* 2. Ajuste del Footer: Pegado al formulario */
 .wrapper {
-    flex: 0;                  /* Evita que empuje el footer hacia abajo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 120px 20px 0;    /* Espacio arriba para la foto, nada abajo */
-}
-
-footer {
-    background: transparent;  /* Sin fondo para integrarse al diseño */
-    padding: 15px 25px 40px;  /* Espaciado ajustado */
-    text-align: center;
-    border-top: none;         /* Eliminamos la línea separadora */
-    margin-top: -10px;        /* Subimos el footer para pegarlo a la tarjeta */
-}
-    margin: -110px auto 15px; /* Ajuste para que flote perfectamente sobre la tarjeta */
-    display: block;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    position: relative;
-    z-index: 10;
-}
-
-/* 3. Footer Pegado al Formulario */
-.wrapper {
-    flex: 0;                  /* Evita que empuje el footer hacia abajo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 120px 20px 0;    /* Espacio arriba para la foto, nada abajo */
-}
-
-footer {
-    background: transparent;  /* Sin fondo para integrarse al diseño */
-    padding: 15px 25px 40px;  /* Espaciado ajustado */
-    text-align: center;
-    border-top: none;         /* Eliminamos la línea separadora */
-    margin-top: -10px;        /* Subimos el footer para pegarlo a la tarjeta */
-}
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-}
-
-.card {
-    background: var(--white);
-    width: 100%;
-    max-width: 450px;
-    padding: 40px 25px;
-    border-radius: 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    text-align: center;
-    animation: fadeIn 0.8s ease-out;
-}
-
-/* Estilo de la foto */
-.foto-perfil {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid var(--white);
-    outline: 3px solid var(--primary);
-    object-fit: cover;
-    margin: -85px auto 15px; /* Efecto flotante moderno */
-    display: block;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-
-h1 {
-    font-size: 22px;
-    color: var(--primary);
-    margin-bottom: 10px;
-}
-
-.info-historia {
-    font-size: 14px;
-    color: var(--text-muted);
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 18px;
-    margin-bottom: 25px;
-}
-
-.campo {
-    text-align: left;
-    margin-bottom: 18px;
-}
-
-label {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--primary);
-    display: block;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-}
-
-input, select {
-    width: 100%;
-    height: 50px;
-    padding: 0 15px;
-    border: 2px solid #eef2f7;
-    border-radius: 12px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-input:focus, select:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(11, 87, 208, 0.1);
-}
-
-button {
-    width: 100%;
-    height: 55px;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 15px;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 10px;
-}
-
-button:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
+    padding: 100px 20px 20px; /* Más espacio arriba para la foto, menos abajo */
 }
 
 footer {
-    background: var(--white);
-    padding: 25px;
+    background: transparent;   /* Fondo transparente para que no se vea separado */
+    padding: 10px 25px 30px;   /* Menos espacio superior */
     text-align: center;
-    border-top: 1px solid #eef2f7;
+    border-top: none;          /* Quitamos la línea que separa */
+    margin-top: -20px;         /* Subimos el footer para pegarlo a la tarjeta */
 }
-
-.social a {
-    color: var(--primary);
-    font-size: 24px;
-    margin: 0 12px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-
-}
-
